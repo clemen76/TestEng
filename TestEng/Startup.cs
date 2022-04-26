@@ -8,6 +8,7 @@ using TestEng.AppServices.Services;
 using TestEng.Entities;
 using TestEng.Entities.Repositories;
 using Microsoft.Extensions.Hosting;
+using TestEng.AppServices.Abstractions.User;
 
 namespace TestEng
 {

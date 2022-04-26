@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TestEng.Data.Models;
 using TestEng.AppServices.Services;
+using TestEng.AppServices.Abstractions.User;
 
 namespace TestEng.Controllers
 {
@@ -35,7 +36,7 @@ namespace TestEng.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _userService.AddUser(userModel);
+                var result = await _userService.AddUser(userModel);
                 return RedirectToAction(nameof(Index));
             }
             return View(userModel);
@@ -65,7 +66,7 @@ namespace TestEng.Controllers
             {
                 try
                 {
-                    await _userService.EditUser(userModel);
+                    var result = await _userService.EditUser(userModel);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
@@ -100,7 +101,7 @@ namespace TestEng.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var userModel = await _userService.GetUserById(id);
-            await _userService.DeleteUser(userModel.UserId);
+            var result = await _userService.DeleteUser(userModel.UserId);
             return RedirectToAction(nameof(Index));
         }
 

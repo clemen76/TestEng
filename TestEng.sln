@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEngTests", "TestEngTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEng.AppServices", "TestEng.AppServices\TestEng.AppServices.csproj", "{850C3404-8428-45E8-B881-35C70B4DC033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEng.Data", "TestEng.Data\TestEng.Data.csproj", "{F5D3C640-701D-4E42-8764-4AB2379490D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEng.Data", "TestEng.Data\TestEng.Data.csproj", "{F5D3C640-701D-4E42-8764-4AB2379490D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEng.Entities", "TestEng.Entities\TestEng.Entities.csproj", "{AAE81F53-55D7-42D1-934A-B5E085356034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEng.Entities", "TestEng.Entities\TestEng.Entities.csproj", "{AAE81F53-55D7-42D1-934A-B5E085356034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEng.AppServices.Abstractions", "TestEng.AppServices.Abstractions\TestEng.AppServices.Abstractions.csproj", "{F35C657A-BB51-48C7-87B5-6B4266A81D00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AAE81F53-55D7-42D1-934A-B5E085356034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE81F53-55D7-42D1-934A-B5E085356034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE81F53-55D7-42D1-934A-B5E085356034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35C657A-BB51-48C7-87B5-6B4266A81D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35C657A-BB51-48C7-87B5-6B4266A81D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35C657A-BB51-48C7-87B5-6B4266A81D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35C657A-BB51-48C7-87B5-6B4266A81D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

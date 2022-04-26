@@ -4,19 +4,10 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using TestEng.Entities.Repositories;
+using TestEng.AppServices.Abstractions.User;
 
 namespace TestEng.AppServices.Services
 {
-    public interface IUserService 
-    {
-        List<UserModel> GetUsers();
-        Task<UserModel> GetUserById(int id);
-        Task<bool> UserExists(int id);
-        Task AddUser(UserModel model);
-        Task EditUser(UserModel user);
-        Task DeleteUser(int id);
-        Task<List<UserModel>> GetActiveUsers();
-    }
     public class UserService: IUserService
     {
         #region constructor
@@ -49,7 +40,7 @@ namespace TestEng.AppServices.Services
             return await _userRepo.Exists(id);
         }
 
-        public async Task AddUser(UserModel user)
+        public async Task<bool> AddUser(UserModel user)
         {
             user.IsActive = true;
             var isValid = ValidateUser(user);
@@ -60,15 +51,17 @@ namespace TestEng.AppServices.Services
                 {
                     _userRepo.Insert(user);
                     await _userRepo.Save();
+                    return true;
                 }
                 catch (Exception e)
                 {
                     throw new Exception(e.Message);
                 }
             }
+            return false;
         }
 
-        public async Task EditUser(UserModel user)
+        public async Task<bool> EditUser(UserModel user)
         {
             var isValid = ValidateUser(user);
 
@@ -78,24 +71,27 @@ namespace TestEng.AppServices.Services
                 {
                     _userRepo.Update(user);
                     await _userRepo.Save();
+                    return true;
                 }
                 catch (Exception e)
                 {
                     throw new Exception(e.Message);
                 }
             }
+            return false;
         }
 
-        public async Task DeleteUser(int id)
+        public async Task<bool> DeleteUser(int id)
         {
             try
             {
                 _userRepo.Remove(id);
                 await _userRepo.Save();
+                return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw new Exception(e.Message);
+                return false;
             }
         }
 

@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestEng.AppServices.Abstractions\TestEng.AppServices.Abstractions.csproj" />
     <ProjectReference Include="..\TestEng.Data\TestEng.Data.csproj" />
-    <ProjectReference Include="..\TestEng.Entities\TestEng.Entities.csproj" />
   </ItemGroup>
 
 </Project>
